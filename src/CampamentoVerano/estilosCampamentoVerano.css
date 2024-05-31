@@ -1,0 +1,661 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+:root{
+    --yellow: #FFBD13;
+    --blue: #4383FF;
+    --blue-d-l: #3278FF;
+    --light: #F5F5F5;
+    --grey: #AAA;
+    --white: #FFF;
+    --bg-color: #ffffff;
+    --main-color: #c8815f;
+    --text-color: #111111;
+    --big-font: 4.5rem;
+    --h2-font: 3.3rem;
+    --h3-font: 2rem;
+    --normal-font: 1rem;
+}
+
+body{
+    color: var(--text-color);
+    background: #000;
+}
+
+/* CABECERA */
+
+header{
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: 20px 14%;
+    transition: all 0.5s ease;
+}
+
+.cabecera{
+    display: flex;
+    padding: 22px 0;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.cabecera .menu-btn{
+    display: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.cabecera .logo{
+    display:flex;
+    gap: 10px;
+    text-decoration: none;
+    align-items: center;
+}
+
+.cabecera .logo img{
+    width: 50px;
+    border-radius: 50%;
+}
+
+.cabecera .links{
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.cabecera .links .close-btn{
+    display: none;
+    color: #000;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px
+    font-size: 1.5rem;
+}
+
+.cabecera .links a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.cabecera .links a:hover{
+    color: #19e8ff;
+}
+
+.cabecera .login-btn{
+    border: none;
+    outline: none;
+    color: #275360;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 3px;
+    cursor: pointer;
+    background: #fff;
+}
+
+/* FORMULARIOS DE INICIO DE SESIÓN Y REGISTRO CON EFECTOS */
+
+.blur-bg-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    backdrop-filter: blur(5px);
+    transition: 0.1s ease;
+}
+
+.show-popup .blur-bg-overlay{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.form-popup{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    max-width: 720px;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    background: #fff;
+    border: 2px solid #fff;
+    transform: translate(-50%, -100%);
+}
+
+.show-popup .form-popup{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease, opacity 0.1s;
+}
+
+.form-popup .close-btn{
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    color: #878484;
+    cursor: pointer;
+}
+
+.form-popup .form-box{
+    display: flex;
+}
+
+.form-box .form-details{
+    max-width: 330px;
+    width: 100%;
+    color: #fff;
+    display: flex;
+    padding: 0 20px;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login .form-details{
+    background: url("images/login-img.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.signup .form-details{
+    background: url("images/signup-img.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.form-box h2{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-box .form-content{
+    width: 100%;
+    padding: 35px;
+}
+
+form .input-field{
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+}
+
+form .input-field input{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    padding: 0 15px;
+    font-size: 0.95rem;
+    border-radius: 3px;
+    border: 1px solid #717171;
+}
+
+.input-field input:focus{
+border-color: #00bcd4;
+}
+
+.input-field input:is(:focus, :valid){
+    padding: 16px 15px 0;
+}
+
+form .input-field label{
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    color: #717171;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: 0.2 ease;
+}
+
+.input-field input:is(:focus, :valid) ~ label{
+    color: #00bcd4;
+    font-size: 0.75rem;
+    transform: translateY(-120%);
+}
+
+.form-box a{
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+.form-box a:hover{
+    text-decoration: underline;
+}
+
+.form-box :where(.forgot-pass, .policy-text) {
+    display: inline-flex;
+    margin-top: 14px;
+    font-size: 0.95;
+}
+
+form button{
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 14px 0;
+    border-radius: 3px;
+    margin: 25px 0;
+    color: #fff;
+    cursor: pointer;
+    background: #00bcd4;
+    transition: 0.2s ease;
+}
+
+form button:hover{
+    background: #0097a7;
+}
+
+.form-box .bottom-link{
+    text-align: center;
+}
+
+.form-popup .signup, .form-popup.show-signup .login{
+    display: none;
+}
+
+.form-popup.show-signup .signup{
+    display: flex;
+}
+
+.signup .policy-text{
+    display: flex;
+    align-items: center;
+}
+
+.signup .policy-text input{
+    width: 14px;
+    height: 14px;
+    margin-right: 7px;
+}
+
+/* Responsive */
+
+@media (max-width: 1023px){
+
+    .cabecera :is(.menu-btn, .links .close-btn){
+        display: block;
+    }
+
+    .cabecera{
+        padding: 15px 0;
+    }
+
+    .cabecera .logo img{
+        display: none;
+    }
+
+    .cabecera .links{
+        position: absolute;
+        left: -120%;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        display: block;
+        padding-top: 60px;
+        text-align: center;
+        background: #fff;
+        transition: 0.2s ease;
+    }
+
+    .cabecera .links.show-menu{
+        left: 0;
+    }
+
+    .cabecera .links a{
+        color: #000;
+        display: inline-flex;
+        margin: 20px 0;
+        font-size: 1.2rem;
+    }
+
+    .cabecera .login-btn{
+        font-size: 0.9rem;
+        padding: 7px 10px;
+    }
+}
+
+@media (max-width: 760px){
+    .form-popup{
+        width: 95%;
+    }
+
+    .form-box .form-details{
+        display: none;
+    }
+
+    .form-box .form-content{
+        padding: 30px 20px;
+    }
+}
+
+/* Campamento de verano */
+
+.course{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+    background: #fff;
+}
+
+.course h1{
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.course p{
+    color: #777;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+
+.course .row{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.course .row .course-col{
+    flex-basis: 31%;
+    background: #fff3f3;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+.course-col h3{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.course-col:hover{
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+}
+
+@media(max-width: 700px){
+    .course .row{
+        flex-direction: column;
+    }
+}
+
+/* Actividades */
+
+.facilities{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+    background: #fff;
+}
+
+.facilities h1{
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.facilities p{
+    color: #777;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+
+.facilities .row{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.facilities .row .facilities-col{
+    flex-basis: 31%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+}
+
+.facilities-col img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.facilities-col p{
+    padding: 0;
+}
+
+.facilities-col h3{
+    margin-top: 16px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+@media(max-width: 700px){
+    .facilities .row{
+        flex-direction: column;
+    }
+}
+
+/* Formulario de Inscripciones a Campamentos */
+
+.inscripciones{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #555764;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(
+        50deg,
+        rgba(40,42,55,1) 50%,
+        rgba(40,42,55,0.7)
+        ),
+        url(images/fondoFormulario.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 50px;
+        width: 100%;
+    flex-direction: column;
+}
+
+.inscripciones h2{
+    color: #F4F6F9;
+    font-size: 40px;
+    margin-bottom: 25px;
+}
+
+.inscripciones form{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.inscripciones form label{
+    font-size: 17px;
+    color: #959AAB;
+    margin-bottom: 10px;
+}
+
+.inscripciones form input{
+    padding: 17px 14px;
+    background-color: #333646;
+    border: 0;
+    font-size: 15px;
+    color: #F4F6F9;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.inscripciones input:focus{
+    outline: 1px solid #1E92E9;
+}
+
+.inscripciones form  .btn{
+    background-color: #1E92E9;
+    width: 200px;
+    align-self: center;
+    cursor: pointer;
+}
+
+.inscripciones form btn:hover{
+    background-color: #219BF9;
+}
+
+@media(max-width: 991px){
+    .inscripciones{
+        padding: 30px;
+        width: 100%;
+    }
+
+    .inscripciones form{
+        width: 100%;
+    }
+}
+
+header.sticky{
+    background: var(--bg-color);
+    padding: 14px 14%;
+    box-shadow: 0px 0px 10px rgb(0 0 0 / 10%);
+}
+
+
+/* BOTÓN SCROLL HACIA ARRIBA */
+
+.top{
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+}
+.top i{
+    font-size: 22px;
+    color: var(--bg-color);
+    padding: 14px;
+    background: var(--main-color);
+    border-radius: 2rem;
+}
+
+/* PIE DE PÁGINA */
+
+footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #15181b;
+    padding: 10px 0;
+}
+
+.container{
+    max-width: 1170px;
+    margin: auto;
+}
+
+.container .row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-col{
+    width: 25%;
+    padding: 0 25px;
+}
+
+.footer-col h4{
+    font-size: 18px;
+    color: white;
+    margin-bottom: 30px;
+    font-weight: 700;
+    position: relative;
+    cursor: pointer;
+}
+
+.footer-col h4::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #e96c1e;
+    height: 5px;
+    width: 130px;
+    border-radius: 1em;
+}
+
+.footer-col a{
+    color: white;
+    transition: 0.3s ease;
+    opacity: 0.8;
+}
+
+.footer-col a:hover:not(.socials a){
+    padding-left: 10px;
+    opacity: 1;
+}
+
+.footer-col .socials{
+    display: inline-block;
+    font-size: 24px;
+}
+
+.footer-col .socials a{
+    margin-left: 3px;
+}
+
+.footer-col .socials i:hover{
+    transition: 0.3s ease;
+    transform: scale(1.2)translateY(-5px);
+}
+
+.footer-col ul li:not(:last-child){
+    margin-bottom: 5px;
+}
+
+/* Responsive */
+
+@media(max-width: 767px){
+    .footer-col{
+        width: 50%;
+        margin-bottom: 10px;
+    }
+}
+
+@media(max-width: 574px){
+    .footer-col{
+        width: 48%;
+    }
+}

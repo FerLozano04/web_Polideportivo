@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método de Pago: Bizum</title>
+    <link rel="stylesheet" href="bizum.css">
+    <!-- 'defer' le dice al navegador que espere hasta que la página haya terminado de analizarse,
+     antes de ejecutar el script -->
+    <script src="bizum.js" defer></script>
+
+</head>
+<body>
+
+<div class="container">
+    <h2>BIZUM</h2>
+    <form id="paymentForm" action="http://localhost/PHP/bizum.php" method="POST">
+        <div class="inputBox">
+            <span>Nombre Completo</span>
+            <input type="text" name="nombreCompleto" class="full-name-input" maxlength="28" required
+                   oninput="validarNombre(event)" autocomplete="off">
+        </div>
+        <div class="inputBox">
+            <span>Teléfono</span>
+            <input type="text" name="telefono" class="tlf-input" maxlength="9" required
+                   oninput="validarTelefono(event)" autocomplete="off">
+        </div>
+        <div class="inputBox">
+            <span>Destinatario</span>
+            <input type="text" name="destinatario" class="receiver-input" maxlength="28" required
+                   oninput="validarNombre(event)" autocomplete="off">
+        </div>
+        <button type="submit" value="submit" class="submit-btn">Finalizar Pago</button>
+    </form>
+</div>
+
+<input type="checkbox" id="submit-btn">
+<div class="container-modal">
+    <div class="content-modal">
+        <h2>Reserva completada con éxito</h2>
+        <p>Sus datos de pago han sido aceptados. ¡Gracias!</p>
+        <div class="btn-cerrar">
+            <a href="http://localhost:63342/webPolideportivo/Reservas/reservas.html">Ver Reserva</a>
+        </div>
+    </div>
+    <label for="submit-btn" class="cerrar-modal"></label>
+</div>
+
+</body>
+</html>

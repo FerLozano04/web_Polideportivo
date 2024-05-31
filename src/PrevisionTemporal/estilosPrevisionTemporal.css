@@ -1,0 +1,700 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+:root{
+    --yellow: #FFBD13;
+    --blue: #4383FF;
+    --blue-d-l: #3278FF;
+    --light: #F5F5F5;
+    --grey: #AAA;
+    --white: #FFF;
+    --bg-color: #ffffff;
+    --main-color: #c8815f;
+    --text-color: #111111;
+    --big-font: 4.5rem;
+    --h2-font: 3.3rem;
+    --h3-font: 2rem;
+    --normal-font: 1rem;
+}
+
+body{
+    color: var(--text-color);
+    background: #000;
+}
+
+/* CABECERA */
+
+header{
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: 20px 14%;
+    transition: all 0.5s ease;
+}
+
+.cabecera{
+    display: flex;
+    padding: 22px 0;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.cabecera .menu-btn{
+    display: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.cabecera .logo{
+    display:flex;
+    gap: 10px;
+    text-decoration: none;
+    align-items: center;
+}
+
+.cabecera .logo img{
+    width: 50px;
+    border-radius: 50%;
+}
+
+.cabecera .links{
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.cabecera .links .close-btn{
+    display: none;
+    color: #000;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px
+    font-size: 1.5rem;
+}
+
+.cabecera .links a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.cabecera .links a:hover{
+    color: #19e8ff;
+}
+
+.cabecera .login-btn{
+    border: none;
+    outline: none;
+    color: #275360;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 3px;
+    cursor: pointer;
+    background: #fff;
+}
+
+/* FORMULARIOS DE INICIO DE SESIÓN Y REGISTRO CON EFECTOS */
+
+.blur-bg-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    backdrop-filter: blur(5px);
+    transition: 0.1s ease;
+}
+
+.show-popup .blur-bg-overlay{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.form-popup{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    max-width: 720px;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    background: #fff;
+    border: 2px solid #fff;
+    transform: translate(-50%, -100%);
+}
+
+.show-popup .form-popup{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease, opacity 0.1s;
+}
+
+.form-popup .close-btn{
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    color: #878484;
+    cursor: pointer;
+}
+
+.form-popup .form-box{
+    display: flex;
+}
+
+.form-box .form-details{
+    max-width: 330px;
+    width: 100%;
+    color: #fff;
+    display: flex;
+    padding: 0 20px;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login .form-details{
+    background: url("images/login-img.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.signup .form-details{
+    background: url("images/signup-img.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.form-box h2{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-box .form-content{
+    width: 100%;
+    padding: 35px;
+}
+
+form .input-field{
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+}
+
+form .input-field input{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    padding: 0 15px;
+    font-size: 0.95rem;
+    border-radius: 3px;
+    border: 1px solid #717171;
+}
+
+.input-field input:focus{
+border-color: #00bcd4;
+}
+
+.input-field input:is(:focus, :valid){
+    padding: 16px 15px 0;
+}
+
+form .input-field label{
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    color: #717171;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: 0.2 ease;
+}
+
+.input-field input:is(:focus, :valid) ~ label{
+    color: #00bcd4;
+    font-size: 0.75rem;
+    transform: translateY(-120%);
+}
+
+.form-box a{
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+.form-box a:hover{
+    text-decoration: underline;
+}
+
+.form-box :where(.forgot-pass, .policy-text) {
+    display: inline-flex;
+    margin-top: 14px;
+    font-size: 0.95;
+}
+
+form button{
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 14px 0;
+    border-radius: 3px;
+    margin: 25px 0;
+    color: #fff;
+    cursor: pointer;
+    background: #00bcd4;
+    transition: 0.2s ease;
+}
+
+form button:hover{
+    background: #0097a7;
+}
+
+.form-box .bottom-link{
+    text-align: center;
+}
+
+.form-popup .signup, .form-popup.show-signup .login{
+    display: none;
+}
+
+.form-popup.show-signup .signup{
+    display: flex;
+}
+
+.signup .policy-text{
+    display: flex;
+    align-items: center;
+}
+
+.signup .policy-text input{
+    width: 14px;
+    height: 14px;
+    margin-right: 7px;
+}
+
+/* Responsive */
+
+@media (max-width: 1023px){
+
+    .cabecera :is(.menu-btn, .links .close-btn){
+        display: block;
+    }
+
+    .cabecera{
+        padding: 15px 0;
+    }
+
+    .cabecera .logo img{
+        display: none;
+    }
+
+    .cabecera .links{
+        position: absolute;
+        left: -120%;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        display: block;
+        padding-top: 60px;
+        text-align: center;
+        background: #fff;
+        transition: 0.2s ease;
+    }
+
+    .cabecera .links.show-menu{
+        left: 0;
+    }
+
+    .cabecera .links a{
+        color: #000;
+        display: inline-flex;
+        margin: 20px 0;
+        font-size: 1.2rem;
+    }
+
+    .cabecera .login-btn{
+        font-size: 0.9rem;
+        padding: 7px 10px;
+    }
+}
+
+@media (max-width: 760px){
+    .form-popup{
+        width: 95%;
+    }
+
+    .form-box .form-details{
+        display: none;
+    }
+
+    .form-box .form-content{
+        padding: 30px 20px;
+    }
+}
+
+header.sticky{
+    background: var(--bg-color);
+    padding: 14px 14%;
+    box-shadow: 0px 0px 10px rgb(0 0 0 / 10%);
+}
+
+/* PANEL METEOROLÓGICO */
+
+h1 {
+  background: #5372F0;
+  font-size: 1.75rem;
+  text-align: center;
+  padding: 18px 0;
+  color: #fff;
+}
+.weather {
+  display: flex;
+  gap: 35px;
+  padding: 80px;
+  background: #E3F2FD;
+}
+.weather-input {
+  width: 550px;
+}
+.weather-input input {
+  height: 46px;
+  width: 100%;
+  outline: none;
+  font-size: 1.07rem;
+  padding: 0 17px;
+  margin: 10px 0 20px 0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+.weather-input input:focus {
+  padding: 0 16px;
+  border: 2px solid #5372F0;
+}
+.weather-input .separator {
+  height: 1px;
+  width: 100%;
+  margin: 25px 0;
+  background: #BBBBBB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.weather-input .separator::before{
+  content: "o";
+  color: #6C757D;
+  font-size: 1.18rem;
+  padding: 0 15px;
+  margin-top: -4px;
+  background: #E3F2FD;
+}
+.weather-input button {
+  width: 100%;
+  padding: 10px 0;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #fff;
+  background: #5372F0;
+  transition: 0.2s ease;
+}
+.weather-input .search-btn:hover {
+  background: #2c52ed;
+}
+.weather-input .location-btn {
+  background: #6C757D;
+}
+.weather-input .location-btn:hover {
+  background: #5c636a;
+}
+.weather-data {
+  width: 100%;
+}
+.weather-data .current-weather {
+  color: #fff;
+  background: #5372F0;
+  border-radius: 5px;
+  padding: 20px 70px 20px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.current-weather h2 {
+  font-weight: 700;
+  font-size: 1.7rem;
+}
+.weather-data h6 {
+  margin-top: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.current-weather .icon {
+  text-align: center;
+}
+.current-weather .icon img {
+  max-width: 120px;
+  margin-top: -15px;
+}
+.current-weather .icon h6 {
+  margin-top: -10px;
+  text-transform: capitalize;
+}
+.days-forecast h2 {
+  margin: 20px 0;
+  font-size: 1.5rem;
+}
+.days-forecast .weather-cards {
+  display: flex;
+  gap: 20px;
+}
+.weather-cards .card {
+  color: #fff;
+  padding: 18px 16px;
+  list-style: none;
+  width: calc(100% / 5);
+  background: #6C757D;
+  border-radius: 5px;
+}
+.weather-cards .card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.weather-cards .card img {
+  max-width: 70px;
+  margin: 5px 0 -12px 0;
+}
+
+@media (max-width: 1400px) {
+  .weather-data .current-weather {
+    padding: 20px;
+  }
+  .weather-cards {
+    flex-wrap: wrap;
+  }
+  .weather-cards .card {
+    width: calc(100% / 4 - 15px);
+  }
+}
+@media (max-width: 1200px) {
+  .weather-cards .card {
+    width: calc(100% / 3 - 15px);
+  }
+}
+@media (max-width: 950px) {
+  .weather-input {
+    width: 450px;
+  }
+  .weather-cards .card {
+    width: calc(100% / 2 - 10px);
+  }
+}
+@media (max-width: 750px) {
+  h1 {
+    font-size: 1.45rem;
+    padding: 16px 0;
+  }
+  .container {
+    flex-wrap: wrap;
+    padding: 15px;
+  }
+  .weather-input {
+    width: 100%;
+  }
+  .weather-data h2 {
+    font-size: 1.35rem;
+  }
+}
+
+/* BOTÓN SCROLL HACIA ARRIBA */
+
+.top{
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+}
+.top i{
+    font-size: 22px;
+    color: var(--bg-color);
+    padding: 14px;
+    background: var(--main-color);
+    border-radius: 2rem;
+}
+
+/* PIE DE PÁGINA */
+
+footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #15181b;
+    padding: 10px 0;
+}
+
+.container{
+    max-width: 1170px;
+    margin: auto;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-col{
+    width: 25%;
+    padding: 0 25px;
+}
+
+.footer-col h4{
+    font-size: 18px;
+    color: white;
+    margin-bottom: 30px;
+    font-weight: 700;
+    position: relative;
+    cursor: pointer;
+}
+
+.footer-col h4::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #e96c1e;
+    height: 5px;
+    width: 130px;
+    border-radius: 1em;
+}
+
+.footer-col a{
+    color: white;
+    transition: 0.3s ease;
+    opacity: 0.8;
+}
+
+.footer-col a:hover:not(.socials a){
+    padding-left: 10px;
+    opacity: 1;
+}
+
+.footer-col .socials{
+    display: inline-block;
+    font-size: 24px;
+}
+
+.footer-col .socials a{
+    margin-left: 3px;
+}
+
+.footer-col .socials i:hover{
+    transition: 0.3s ease;
+    transform: scale(1.2)translateY(-5px);
+}
+
+.footer-col ul li:not(:last-child){
+    margin-bottom: 5px;
+}
+
+/* Responsive */
+
+@media(max-width: 767px){
+    .footer-col{
+        width: 50%;
+        margin-bottom: 10px;
+    }
+}
+
+@media(max-width: 574px){
+    .footer-col{
+        width: 48%;
+    }
+}
+
+@media (max-width: 950px) {
+  .weather-input {
+    width: auto;
+  }
+
+  .weather-cards .card {
+    width: calc(100% / 2 - 10px);
+  }
+
+   .weather {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 750px) {
+  h1 {
+    font-size: 1.45rem;
+    padding: 16px 0;
+  }
+
+  .container {
+    flex-wrap: wrap;
+    padding: 15px;
+  }
+
+  .weather-input {
+    width: 100%;
+  }
+
+  .weather-data h2 {
+    font-size: 1.35rem;
+  }
+
+  .weather {
+    flex-direction: column;
+  }
+
+}
+
+@media (max-width: 430px) {
+  .weather {
+    flex-direction: column;
+  }
+
+  .weather-cards {
+    flex-direction: column;
+  }
+
+  .weather-cards .card {
+    flex-direction: column;
+    width: 90%;
+    margin: 10px 0;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .weather-cards .card h3 {
+    font-size: 1.2rem;
+  }
+
+  .weather-cards .card p {
+    font-size: 1rem;
+  }
+
+}

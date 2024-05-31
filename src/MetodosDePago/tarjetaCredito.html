@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método de Pago: Tarjeta de Crédito</title>
+    <link rel="stylesheet" href="tarjetaCredito.css">
+    <!-- 'defer' le dice al navegador que espere hasta que la página haya terminado de analizarse,
+     antes de ejecutar el script -->
+    <script src="tarjetaCredito.js" defer></script>
+
+</head>
+<body>
+
+<div class="container">
+    <div class="card-container">
+        <div class="front">
+            <div class="image">
+                <img src="images/chip.png" alt="">
+                <img src="images/visa.png" alt="">
+            </div>
+            <div class="card-number-box">################</div>
+            <div class="flexbox">
+                <div class="box">
+                    <span>Titular de la Tarjeta</span>
+                    <div class="card-holder-name">Nombre Completo</div>
+                </div>
+                <div class="box">
+                    <span>Expira:</span>
+                    <div class="expiration">
+                        <span class="exp-month">MM</span>
+                        <span class="exp-year">YYYY</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="back">
+            <div class="stripe"></div>
+            <div class="box">
+                <span>cvv</span>
+                <div class="cvv-box"></div>
+                <img src="images/visa.png" alt="">
+            </div>
+        </div>
+
+    </div>
+
+    <form id="paymentForm" action="http://localhost/PHP/tarjetaCredito.php" method="POST">
+        <div class="inputBox">
+            <span>Número de Tarjeta</span>
+            <input type="text" name="numero" class="card-number-input" maxlength="16" required
+                   oninput="validarTelefono(event)" autocomplete="off">
+        </div>
+        <div class="inputBox">
+            <span>Titular de la Tarjeta</span>
+            <input type="text" name="titular" class="card-holder-input" maxlength="28" required
+                   oninput="validarNombre(event)" autocomplete="off">
+        </div>
+        <div class="flexbox">
+            <div class="inputBox">
+                <span>Mes de Caducidad</span>
+                <select name="mesCaducidad" class="month-input">
+                    <option value="month" selected disabled>Mes</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+            </div>
+            <div class="inputBox">
+                <span>Año de Vencimiento</span>
+                <select name="anioVencimiento" class="year-input">
+                    <option value="year" selected disabled>Año</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                    <option value="2029">2029</option>
+                    <option value="2030">2030</option>
+                </select>
+            </div>
+            <div class="inputBox">
+                <span>CVV</span>
+                <input type="text" name="cvv" class="cvv-input" maxlength="3" required
+                       oninput="validarTelefono(event)" autocomplete="off">
+            </div>
+        </div>
+        <button type="submit" value="submit" class="submit-btn">Finalizar Pago</button>
+    </form>
+</div>
+
+<input type="checkbox" id="submit-btn">
+<div class="container-modal">
+    <div class="content-modal">
+        <h2>Reserva completada con éxito</h2>
+        <p>Sus datos de pago han sido aceptados. ¡Gracias!</p>
+        <div class="btn-cerrar">
+            <a href="http://localhost:63342/webPolideportivo/Reservas/reservas.html">Ver Reserva</a>
+        </div>
+    </div>
+    <label for="submit-btn" class="cerrar-modal"></label>
+</div>
+
+</body>
+</html>

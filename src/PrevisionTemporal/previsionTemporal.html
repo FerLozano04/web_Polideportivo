@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polideportivo Lozano Villanova</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
+    <link rel="stylesheet" href="estilosPrevisionTemporal.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- 'defer' le dice al navegador que espere hasta que la página haya terminado de analizarse,
+     antes de ejecutar el script -->
+    <script src="previsionTemporal.js" defer></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+<body>
+<header>
+    <!-- Cabecera -->
+    <nav class="cabecera">
+        <span class="menu-btn material-symbols-rounded">menu</span>
+        <a href="#" class="logo">
+            <img src="images/logo.png" alt="logo">
+        </a>
+        <ul class="links">
+            <span class="close-btn material-symbols-rounded">close</span>
+            <!-- C:/Users/ferma/IdeaProjects/webPolideportivo/src, va antes de /Instalaciones -->
+            <li><a href="http://localhost:63342/webPolideportivo/Home/home.html">Inicio</a></li>
+            <li><a href="http://localhost:63342/webPolideportivo/Instalaciones/instalaciones.html">Instalaciones</a></li>
+            <li><a href="#">Previsión Temporal</a></li>
+            <li><a href="http://localhost:63342/webPolideportivo/Reservas/reservas.html">Reservas</a></li>
+            <li><a href="http://localhost:63342/webPolideportivo/CampamentoVerano/campamentoVerano.html">Campamentos de verano</a></li>
+        </ul>
+        <button class="login-btn">Iniciar Sesión</button>
+    </nav>
+</header>
+
+<h1>Previsión Temporal</h1>
+
+<div class="weather">
+    <div class="weather-input">
+        <h3>Introduce el nombre de la ciudad</h3>
+        <input class="city-input" type="text" oninput="validarNombre(event)"
+               placeholder="Por ejemplo: Londres, Madrid...">
+        <button class="search-btn">Buscar</button>
+        <div class="separator"></div>
+        <button class="location-btn">Usar tu ubicación actual</button>
+    </div>
+    <div class="weather-data">
+        <div class="current-weather">
+            <div class="details">
+                <h2>_______ ( ______ )</h2>
+                <h6>Temperatura: __°C</h6>
+                <h6>Viento: __ M/S</h6>
+                <h6>Humedad: __%</h6>
+            </div>
+        </div>
+        <div class="days-forecast">
+            <h2>Pronóstico para los próximos 5 días</h2>
+            <ul class="weather-cards">
+                <li class="card">
+                    <h3>( ______ )</h3>
+                    <h6>Temperatura: __°C</h6>
+                    <h6>Viento: __ M/S</h6>
+                    <h6>Humedad: __%</h6>
+                </li>
+                <li class="card">
+                    <h3>( ______ )</h3>
+                    <h6>Temperatura: __°C</h6>
+                    <h6>Viento: __ M/S</h6>
+                    <h6>Humedad: __%</h6>
+                </li>
+                <li class="card">
+                    <h3>( ______ )</h3>
+                    <h6>Temperatura: __°C</h6>
+                    <h6>Viento: __ M/S</h6>
+                    <h6>Humedad: __%</h6>
+                </li>
+                <li class="card">
+                    <h3>( ______ )</h3>
+                    <h6>Temperatura: __°C</h6>
+                    <h6>Viento: __ M/S</h6>
+                    <h6>Humedad: __%</h6>
+                </li>
+                <li class="card">
+                    <h3>( ______ )</h3>
+                    <h6>Temperatura: __°C</h6>
+                    <h6>Viento: __ M/S</h6>
+                    <h6>Humedad: __%</h6>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Pie de página -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <h4>Inicio</h4>
+                <ul>
+                    <li><a href="http://localhost:63342/webPolideportivo/Home/home.html#bienvenida">Bienvenida</a></li>
+                    <li><a href="http://localhost:63342/webPolideportivo/Home/home.html#queOfrecemos">¿Qué ofrecemos?</a></li>
+                    <li><a href="http://localhost:63342/webPolideportivo/Home/home.html#porqueVenir">Por qué venir aquí</a></li>
+                    <li><a href="http://localhost:63342/webPolideportivo/Home/home.html#galeria">Galería</a></li>
+                    <li><a href="http://localhost:63342/webPolideportivo/Home/home.html#contacto">Contacto</a></li>
+                    <li><a href="http://localhost:63342/webPolideportivo/Home/home.html#valoraciones">Valoraciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Instalaciones</h4>
+                <ul>
+                    <li><a href="http://localhost:63342/webPolideportivo/Instalaciones/instalaciones.html#futbol">Fútbol</a></li>
+                    <li><a href="http://localhost:63342/webPolideportivo/Instalaciones/instalaciones.html#baloncesto">Baloncesto</a></li>
+                    <li><a href="http://localhost:63342/webPolideportivo/Instalaciones/instalaciones.html#natacion">Natación</a></li>
+                    <li><a href="http://localhost:63342/webPolideportivo/Instalaciones/instalaciones.html#padel">Pádel</a></li>
+                    <li><a href="http://localhost:63342/webPolideportivo/Instalaciones/instalaciones.html#atletismo">Atletismo</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Servicios</h4>
+                <ul>
+                    <li><a href="#">Previsión Temporal</a></li>
+                    <li><a href="http://localhost:63342/webPolideportivo/Reservas/reservas.html">Reservas</a></li>
+                    <li><a href="http://localhost:63342/webPolideportivo/CampamentoVerano/campamentoVerano.html">Campamentos de verano</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Redes sociales</h4>
+                <div class="socials">
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                    <a href="#"><i class='bx bxl-facebook-square' ></i></a>
+                    <a href="#"><i class='bx bxl-tiktok'></i></a>
+                    <a href="#"><i class='bx bxl-twitter' ></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!---- Botón de scroll para ir hasta arriba de la página --->
+<a href="#" class="top"><i class='bx bx-up-arrow-alt' ></i></a>
+<script src="https://unpkg.com/scrollreveal"></script>
+
+<!-- Efectos del formulario -->
+<div class="blur-bg-overlay"></div>
+<div class="form-popup">
+    <span class="close-btn material-symbols-rounded">close</span>
+    <!-- Formulario Iniciar Sesión -->
+    <div class="form-box login">
+        <div class="form-details">
+            <h2>Bienvenido de nuevo</h2>
+            <p>Inicie sesión con su información personal para mantenerse conectado con nosotros</p>
+        </div>
+        <div class="form-content">
+            <h2>Inicio de sesión</h2>
+            <form action="http://localhost/PHP/login.php" method="POST" autocomplete="off">
+                <div class="input-field">
+                    <input type="text" name="correo" id="correo" maxlength="30" required>
+                    <label>Correo</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" name="contrasenia" id="contrasenia" maxlength="8" required>
+                    <label>Contraseña</label>
+                </div>
+                <div class="g-recaptcha" data-sitekey="6LeNldopAAAAAMa5ul8U8DoEG6Nj6sadbEAq5TtA"></div>
+                <button type="submit" name="submit" class="submit">Acceder</button>
+            </form>
+            <div class="bottom-link">
+                ¿No tienes cuenta?
+                <a href="#" id="signup-link">Registrarse</a>
+            </div>
+        </div>
+    </div>
+    <!-- Formulario Registrarse -->
+    <div class="form-box signup">
+        <div class="form-details">
+            <h2>Registrar una cuenta</h2>
+            <p>Para formar parte de nuestra comunidad, regístrese utilizando su información personal.</p>
+        </div>
+        <div class="form-content">
+            <h2>Registro</h2>
+            <form action="http://localhost/PHP/registro.php" method="POST">
+                <div class="input-field">
+                    <input type="text" name="nombre" oninput="validarNombre(event)" autocomplete="off" required>
+                    <label>Introduce tu nombre</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" name="apellidos" required oninput="validarNombre(event)" autocomplete="off">
+                    <label>Introduce tus apellidos</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" name="telefono" required oninput="validarTelefono(event)" maxlength="9"
+                           autocomplete="off">
+                    <label>Introduce tu teléfono</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" name="correo" required maxlength="30" autocomplete="off">
+                    <label>Introduce tu correo</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" name="contrasenia" required maxlength="8" autocomplete="off">
+                    <label>Introduce tu contraseña</label>
+                </div>
+                <button type="submit" value="submit" class="submit">Registrarse</button>
+            </form>
+            <div class="bottom-link">
+                ¿Ya tienes una cuenta?
+                <a href="#" id="login-link">Iniciar Sesión</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

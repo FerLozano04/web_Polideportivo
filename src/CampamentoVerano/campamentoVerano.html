@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polideportivo Lozano Villanova</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
+    <link rel="stylesheet" href="estilosCampamentoVerano.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- 'defer' le dice al navegador que espere hasta que la página haya terminado de analizarse,
+     antes de ejecutar el script -->
+    <script src="campamentoVerano.js" defer></script>
+</head>
+<body>
+<header>
+    <!-- Cabecera -->
+    <nav class="cabecera">
+        <span class="menu-btn material-symbols-rounded">menu</span>
+        <a href="#" class="logo">
+            <img src="images/logo.png" alt="logo">
+        </a>
+        <ul class="links">
+            <span class="close-btn material-symbols-rounded">close</span>
+            <li><a href="http://localhost:63342/webPolideportivo/Home/home.html">Inicio</a></li>
+            <li><a href="http://localhost:63342/webPolideportivo/Instalaciones/instalaciones.html">Instalaciones</a></li>
+            <li><a href="http://localhost:63342/webPolideportivo/PrevisionTemporal/previsionTemporal.html">Previsión Temporal</a></li>
+            <li><a href="http://localhost:63342/webPolideportivo/Reservas/reservas.html">Reservas</a></li>
+            <li><a href="#">Campamentos de verano</a></li>
+        </ul>
+        <button class="login-btn">Iniciar Sesión</button>
+    </nav>
+</header>
+
+<!-- Campamento de verano -->
+<section class="course">
+    <h1>Campamento de verano</h1>
+    <p>¿Porqué va a ser el mejor verano para tus hijos?</p>
+
+    <div class="row">
+        <div class="course-col">
+            <h3>Convivencia</h3>
+            <p>Podrán convivir con otros niños y niñas con edades diferentes y con gustos distintos.</p>
+        </div>
+        <div class="course-col">
+            <h3>Independientes</h3>
+            <p>Al salir del entorno familiar, los niños y jóvenes comienzan a adquirir mayor autonomía.
+               A pesar de que cuentan con ayuda de monitores profesionales, tienen que hacer por sí mismos cosas
+               que habitualmente en casa los padres hacen por ellos.</p>
+        </div>
+        <div class="course-col">
+            <h3>Vínculo con la naturaleza</h3>
+            <p>Esta conexión no solo promueve la apreciación del medio ambiente, sino que también ofrece beneficios
+               para la salud física y mental. La exposición a la naturaleza mejora la creatividad y reduce el estrés.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Actividades -->
+<section class="facilities">
+    <h1>Actividades</h1>
+    <p>Las actividades más emocionantes para tus hijos.</p>
+
+    <div class="row">
+        <div class="facilities-col">
+            <img src="images/juegoBandera.jpg">
+            <h3>1. Juego de la Bandera</h3>
+            <p>Su funcionamiento es básico, hay que capturar la bandera del equipo enemigo y traerla a tu campo sin
+               ser capturado. El equipo contrario puede capturarte mientras estás en su campo y al revés.</p>
+        </div>
+        <div class="facilities-col">
+            <img src="images/enBuscaDelTesoro.jpg">
+            <h3>2. En busca del tesoro</h3>
+            <p>Se divide a los participantes en diferentes grupos y se esconde un objeto que deberán encontrar en
+               medio del monte. Gracias a las pistas a ver que equipo lo encuentra primero.</p>
+        </div>
+        <div class="facilities-col">
+            <img src="images/Yincana.jpg">
+            <h3>3. Yincana</h3>
+            <p>Esta actividad consiste en crear un conjunto de pruebas de destreza o ingenio dentro de un trazado
+               determinado. El objetivo es recorrer la ruta estipulada en el menor tiempo posible.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Formulario de Inscripciones a Campamentos -->
+<div class="inscripciones">
+    <h2>Formulario de Inscripción</h2>
+    <form action="https://formsubmit.co/fwrlozano@gmail.com" method="POST">
+        <label for="Nombre">Nombre</label>
+        <input type="text" name="Nombre" id="Nombre" oninput="validarNombre(event)" autocomplete="off">
+        <label for="Apellidos">Apellidos</label>
+        <input type="text" name="Apellidos" id="Apellidos" oninput="validarNombre(event)" autocomplete="off">
+        <label for="Edad">Edad</label>
+        <input type="text" name="Edad" id="Edad" oninput="validarEdad(event)" maxlength="2" autocomplete="off">
+        <label for="DNI">DNI</label>
+        <input type="text" name="DNI" id="DNI" maxlength="9" autocomplete="off">
+        <input class="btn" type="submit" value="Enviar">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="http://localhost:63342/webPolideportivo/MetodosDePago/metodosPago.html">
+    </form>
+</div>
+
+<!-- Pie de página -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <h4>Inicio</h4>
+                <ul>
+                    <li><a href="http://localhost:63342/webPolideportivo/Home/home.html#bienvenida">Bienvenida</a></li>
+                    <li><a href="http://localhost:63342/webPolideportivo/Home/home.html#queOfrecemos">¿Qué ofrecemos?</a></li>
+                    <li><a href="http://localhost:63342/webPolideportivo/Home/home.html#porqueVenir">Por qué venir aquí</a></li>
+                    <li><a href="http://localhost:63342/webPolideportivo/Home/home.html#galeria">Galería</a></li>
+                    <li><a href="http://localhost:63342/webPolideportivo/Home/home.html#contacto">Contacto</a></li>
+                    <li><a href="http://localhost:63342/webPolideportivo/Home/home.html#valoraciones">Valoraciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Instalaciones</h4>
+                <ul>
+                    <li><a href="http://localhost:63342/webPolideportivo/instalaciones.html#futbol">Fútbol</a></li>
+                    <li><a href="http://localhost:63342/webPolideportivo/Instalaciones/instalaciones.html#baloncesto">Baloncesto</a></li>
+                    <li><a href="http://localhost:63342/webPolideportivo/Instalaciones/instalaciones.html#natacion">Natación</a></li>
+                    <li><a href="http://localhost:63342/webPolideportivo/Instalaciones/instalaciones.html#padel">Pádel</a></li>
+                    <li><a href="http://localhost:63342/webPolideportivo/Instalaciones/instalaciones.html#atletismo">Atletismo</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Servicios</h4>
+                <ul>
+                    <li><a href="http://localhost:63342/webPolideportivo/PrevisionTemporal/previsionTemporal.html">Previsión Temporal</a></li>
+                    <li><a href="http://localhost:63342/webPolideportivo/Reservas/reservas.html">Reservas</a></li>
+                    <li><a href="#">Campamentos de verano</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Redes sociales</h4>
+                <div class="socials">
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                    <a href="#"><i class='bx bxl-facebook-square' ></i></a>
+                    <a href="#"><i class='bx bxl-tiktok'></i></a>
+                    <a href="#"><i class='bx bxl-twitter' ></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!---- Botón de scroll para ir hasta arriba de la página --->
+<a href="#" class="top"><i class='bx bx-up-arrow-alt' ></i></a>
+<script src="https://unpkg.com/scrollreveal"></script>
+
+<!-- Efectos del formulario -->
+<div class="blur-bg-overlay"></div>
+<div class="form-popup">
+    <span class="close-btn material-symbols-rounded">close</span>
+    <!-- Formulario Iniciar Sesión -->
+    <div class="form-box login">
+        <div class="form-details">
+            <h2>Bienvenido de nuevo</h2>
+            <p>Inicie sesión con su información personal para mantenerse conectado con nosotros</p>
+        </div>
+        <div class="form-content">
+            <h2>Inicio de sesión</h2>
+            <form action="http://localhost/PHP/login.php" method="POST" autocomplete="off">
+                <div class="input-field">
+                    <input type="text" name="correo" id="correo" maxlength="30" required>
+                    <label>Correo</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" name="contrasenia" id="contrasenia" maxlength="8" required>
+                    <label>Contraseña</label>
+                </div>
+                <div class="g-recaptcha" data-sitekey="6LeNldopAAAAAMa5ul8U8DoEG6Nj6sadbEAq5TtA"></div>
+                <button type="submit" name="submit" class="submit">Acceder</button>
+            </form>
+            <div class="bottom-link">
+                ¿No tienes cuenta?
+                <a href="#" id="signup-link">Registrarse</a>
+            </div>
+        </div>
+    </div>
+    <!-- Formulario Registrarse -->
+    <div class="form-box signup">
+        <div class="form-details">
+            <h2>Registrar una cuenta</h2>
+            <p>Para formar parte de nuestra comunidad, regístrese utilizando su información personal.</p>
+        </div>
+        <div class="form-content">
+            <h2>Registro</h2>
+            <form action="http://localhost/PHP/registro.php" method="POST">
+                <div class="input-field">
+                    <input type="text" name="nombre" oninput="validarNombre(event)" autocomplete="off" required>
+                    <label>Introduce tu nombre</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" name="apellidos" required oninput="validarNombre(event)" autocomplete="off">
+                    <label>Introduce tus apellidos</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" name="telefono" required oninput="validarTelefono(event)" maxlength="9"
+                           autocomplete="off">
+                    <label>Introduce tu teléfono</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" name="correo" required maxlength="30" autocomplete="off">
+                    <label>Introduce tu correo</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" name="contrasenia" required maxlength="8" autocomplete="off">
+                    <label>Introduce tu contraseña</label>
+                </div>
+                <button type="submit" value="submit" class="submit">Registrarse</button>
+            </form>
+            <div class="bottom-link">
+                ¿Ya tienes una cuenta?
+                <a href="#" id="login-link">Iniciar Sesión</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
