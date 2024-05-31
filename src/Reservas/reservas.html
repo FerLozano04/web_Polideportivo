@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polideportivo Lozano Villanova</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
+    <link rel="stylesheet" href="estilosReservas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/03a89292db.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- 'defer' le dice al navegador que espere hasta que la página haya terminado de analizarse,
+     antes de ejecutar el script -->
+    <script src="reservas.js" defer></script>
+</head>
+<body>
+<header>
+    <!-- Cabecera -->
+    <nav class="cabecera">
+        <span class="menu-btn material-symbols-rounded">menu</span>
+        <a href="#" class="logo">
+            <img src="images/logo.png" alt="logo">
+        </a>
+        <ul class="links">
+            <span class="close-btn material-symbols-rounded">close</span>
+            <li><a href="http://localhost:63342/webPolideportivo/Home/home.html">Inicio</a></li>
+            <li><a href="http://localhost:63342/webPolideportivo/Instalaciones/instalaciones.html">Instalaciones</a></li>
+            <li><a href="http://localhost:63342/webPolideportivo/PrevisionTemporal/previsionTemporal.html">Previsión Temporal</a></li>
+            <li><a href="#">Reservas</a></li>
+            <li><a href="http://localhost:63342/webPolideportivo/CampamentoVerano/campamentoVerano.html">Campamentos de verano</a></li>
+        </ul>
+        <button class="login-btn">Iniciar Sesión</button>
+    </nav>
+</header>
+
+<!-- Contenedor de las tarjetas -->
+<div class="cards">
+    <h2>Reservas</h2>
+    <p>Aquí puedes ver las reservas de las pistas</p>
+    <input type="text" id="searchInput" placeholder="Buscar por deporte">
+    <div class="cards-container" id="cards-container"></div>
+</div>
+
+
+<!-- Clases Particulares -->
+<div class="main-container">
+    <h2>Clases Particulares</h2>
+    <p>Elige el deporte y el profesor que quieres que te entrene</p>
+    <div class="filter-container">
+        <div class="category-head">
+            <ul>
+                <div class="category-title active" id="all">
+                    <li>Todo</li>
+                </div>
+                <div class="category-title" id="futbol">
+                    <li>Fútbol</li>
+                </div>
+                <div class="category-title" id="baloncesto">
+                    <li>Baloncesto</li>
+                </div>
+                <div class="category-title" id="natacion">
+                    <li>Natación</li>
+                </div>
+                <div class="category-title" id="padel">
+                    <li>Pádel</li>
+                </div>
+                <div class="category-title" id="atletismo">
+                    <li>Atletismo</li>
+                </div>
+            </ul>
+        </div>
+
+        <div class="posts-collect">
+            <div class="posts-main-container">
+                <!-- single post -->
+                <div class="all futbol">
+                    <div class="post-img">
+                        <img src="images/futbol1.jpg" alt="post">
+                        <span class="category-name">Fútbol</span>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-content-top">
+                            <span>Al fútbol se juega con el cerebro</span>
+                        </div>
+                        <h2>Luis Fernández</h2>
+                        <p>Da clases de Lunes a Miércoles de 8 a 9 PM durante 5 meses. Precio: 500 €</p>
+                        <a href="http://localhost:63342/webPolideportivo/MetodosDePago/metodosPago.html" type="button"
+                           class="read-btn" data-profesor="Luis Fernández" data-deporte="Fútbol"
+                           data-precio="500€">Reservar</a>
+                    </div>
+                </div>
+                <!-- end of single post -->
+
+                <!-- single post -->
+                <div class="all futbol">
+                    <div class="post-img">
+                        <img src="images/futbol2.jpg" alt="post">
+                        <span class="category-name">Fútbol</span>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-content-top">
+                            <span>He aprendido de la vida con una pelota bajo el pie</span>
+                        </div>
+                        <h2>David Villanova</h2>
+                        <p>Da clases Miércoles y Viernes de 5 a 7 PM durante 5 meses. Precio: 550 €</p>
+                        <a href="http://localhost:63342/webPolideportivo/MetodosDePago/metodosPago.html" type="button"
+                           class="read-btn" data-profesor="David Villanova" data-deporte="Fútbol"
+                           data-precio="550€">Reservar</a>
+                    </div>
+                </div>
+                <!-- end of single post -->
+
+                <!-- single post -->
+                <div class="all futbol">
+                    <div class="post-img">
+                        <img src="images/futbol3.jpg" alt="post">
+                        <span class="category-name">Fútbol</span>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-content-top">
+                            <span>El fútbol no es una lógica escrita, al fútbol se juega</span>
+                        </div>
+                        <h2>Francisco López</h2>
+                        <p>Da clases de Lunes a Jueves de 6 a 9 PM durante 5 meses. Precio: 700 €</p>
+                        <a href="http://localhost:63342/webPolideportivo/MetodosDePago/metodosPago.html" type="button"
+                           class="read-btn" data-profesor="Francisco López" data-deporte="Fútbol"
+                           data-precio="700€">Reservar</a>
+                    </div>
+                </div>
+                <!-- end of single post -->
+
+                <!-- single post -->
+                <div class="all baloncesto">
+                    <div class="post-img">
+                        <img src="images/baloncesto1.jpg" alt="post">
+                        <span class="category-name">Baloncesto</span>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-content-top">
+                            <span>El talento gana partidos, pero el trabajo en equipo y la inteligencia
+                                  ganan campeonatos</span>
+                        </div>
+                        <h2>Juan Fernández</h2>
+                        <p>Da clases de Martes a Jueves de 8 a 9 PM durante 7 meses. Precio: 600 €</p>
+                        <a href="http://localhost:63342/webPolideportivo/MetodosDePago/metodosPago.html" type="button"
+                           class="read-btn" data-profesor="Juan Fernández" data-deporte="Baloncesto"
+                           data-precio="600€">Reservar</a>
+                    </div>
+                </div>
+                <!-- end of single post -->
+
+                <!-- single post -->
+                <div class="all baloncesto">
+                    <div class="post-img">
+                        <img src="images/baloncesto2.jpg" alt="post">
+                        <span class="category-name">Baloncesto</span>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-content-top">
+                            <span>Perder balones es la antesala de un mal ataque</span>
+                        </div>
+                        <h2>Laura Sánchez</h2>
+                        <p>Da clases de Lunes a Miércoles de 5 a 6 PM durante 3 meses. Precio: 400 €</p>
+                        <a href="http://localhost:63342/webPolideportivo/MetodosDePago/metodosPago.html" type="button"
+                           class="read-btn" data-profesor="Laura Sánchez" data-deporte="Baloncesto"
+                           data-precio="400€">Reservar</a>
+                    </div>
+                </div>
+                <!-- end of single post -->
+
+                <!-- single post -->
+                <div class="all baloncesto">
+                    <div class="post-img">
+                        <img src="images/baloncesto3.jpg" alt="post">
+                        <span class="category-name">Baloncesto</span>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-content-top">
+                            <span>El éxito no es un accidente, el éxito es una elección</span>
+                        </div>
+                        <h2>Javier Lozano</h2>
+                        <p>Da clases de Miércoles a Viernes de 5 a 8 PM durante 6 meses. Precio: 700 €</p>
+                        <a href="http://localhost:63342/webPolideportivo/MetodosDePago/metodosPago.html" type="button"
+                           class="read-btn" data-profesor="Javier Lozano" data-deporte="Baloncesto"
+                           data-precio="700€">Reservar</a>
+                    </div>
+                </div>
+                <!-- end of single post -->
+
+                <!-- single post -->
+                <div class="all natacion">
+                    <div class="post-img">
+                        <img src="images/natacion1.jpg" alt="post">
+                        <span class="category-name">Natación</span>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-content-top">
+                            <span>El deporte que no tiene competencia, se llama natación</span>
+                        </div>
+                        <h2>Raúl González</h2>
+                        <p>Da clases Jueves y Viernes de 6 a 7 PM durante 4 meses. Precio: 300 €</p>
+                        <a href="http://localhost:63342/webPolideportivo/MetodosDePago/metodosPago.html" type="button"
+                           class="read-btn" data-profesor="Raúl González" data-deporte="Natación"
+                           data-precio="300€">Reservar</a>
+                    </div>
+                </div>
+                <!-- end of single post -->
+
+                <!-- single post -->
+                <div class="all natacion">
+                    <div class="post-img">
+                        <img src="images/natacion2.jpg" alt="post">
+                        <span class="category-name">Natación</span>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-content-top">
+                            <span>Un futbolista atrae, pero un nadador, enamora</span>
+                        </div>
+                        <h2>Anais Molina</h2>
+                        <p>Da clases de Lunes a Miércoles de 8 a 10 PM durante 6 meses. Precio: 600 €</p>
+                        <a href="http://localhost:63342/webPolideportivo/MetodosDePago/metodosPago.html" type="button"
+                           class="read-btn" data-profesor="Anais Molina" data-deporte="Natación"
+                           data-precio="600€">Reservar</a>
+                    </div>
+                </div>
+                <!-- end of single post -->
+
+                <!-- single post -->
+                <div class="all natacion">
+                    <div class="post-img">
+                        <img src="images/natacion3.jpg" alt="post">
+                        <span class="category-name">Natación</span>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-content-top">
+                            <span>Si vas a tirar la toalla que sea después de secarte</span>
+                        </div>
+                        <h2>Keylor Martos</h2>
+                        <p>Da clases de Miércoles a Viernes de 5 a 7 PM durante 6 meses. Precio: 550 €</p>
+                        <a href="http://localhost:63342/webPolideportivo/MetodosDePago/metodosPago.html" type="button"
+                           class="read-btn" data-profesor="Keylor Martos" data-deporte="Natación"
+                           data-precio="550€">Reservar</a>
+                    </div>
+                </div>
+                <!-- end of single post -->
+
+                <!-- single post -->
+                <div class="all padel">
+                    <div class="post-img">
+                        <img src="images/padel1.jpg" alt="post">
+                        <span class="category-name">Pádel</span>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-content-top">
+                            <span>Sin sufrimiento, no hay felicidad</span>
+                        </div>
+                        <h2>Victor Elías</h2>
+                        <p>Da clases Miércoles y Viernes de 5 a 7 PM durante 4 meses. Precio: 750 €</p>
+                        <a href="http://localhost:63342/webPolideportivo/MetodosDePago/metodosPago.html" type="button"
+                           class="read-btn" data-profesor="Victor Elías" data-deporte="Pádel"
+                           data-precio="750€">Reservar</a>
+                    </div>
+                </div>
+                <!-- end of single post -->
+
+                <!-- single post -->
+                <div class="all padel">
+                    <div class="post-img">
+                        <img src="images/padel2.jpg" alt="post">
+                        <span class="category-name">Pádel</span>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-content-top">
+                            <span>Simplemente juega. Diviértete. Disfruta el juego</span>
+                        </div>
+                        <h2>Irene Moreira</h2>
+                        <p>Da clases de Lunes a Miércoles de 8 a 10 PM durante 4 meses. Precio: 600 €</p>
+                        <a href="http://localhost:63342/webPolideportivo/MetodosDePago/metodosPago.html" type="button"
+                           class="read-btn" data-profesor="Irene Moreira" data-deporte="Pádel"
+                           data-precio="600€">Reservar</a>
+                    </div>
+                </div>
+                <!-- end of single post -->
+
+                <!-- single post -->
+                <div class="all padel">
+                    <div class="post-img">
+                        <img src="images/padel3.jpg" alt="post">
+                        <span class="category-name">Pádel</span>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-content-top">
+                            <span>Si se cree y se trabaja, se puede</span>
+                        </div>
+                        <h2>Silvia Pascual</h2>
+                        <p>Da clases Lunes y Martes de 6 a 8 PM durante 7 meses. Precio: 900 €</p>
+                        <a href="http://localhost:63342/webPolideportivo/MetodosDePago/metodosPago.html" type="button"
+                           class="read-btn" data-profesor="Silvia Pascual" data-deporte="Pádel"
+                           data-precio="900€">Reservar</a>
+                    </div>
+                </div>
+                <!-- end of single post -->
+
+                <!-- single post -->
+                <div class="all atletismo">
+                    <div class="post-img">
+                        <img src="images/atletismo1.jpg" alt="post">
+                        <span class="category-name">Atletismo</span>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-content-top">
+                            <span>Corre hacia tus sueños</span>
+                        </div>
+                        <h2>Pablo Rodríguez</h2>
+                        <p>Da clases Martes y Viernes de 5 a 7 PM durante 5 meses. Precio: 600 €</p>
+                        <a href="http://localhost:63342/webPolideportivo/MetodosDePago/metodosPago.html" type="button"
+                           class="read-btn" data-profesor="Pablo Rodríguez" data-deporte="Atletismo"
+                           data-precio="600€">Reservar</a>
+                    </div>
+                </div>
+                <!-- end of single post -->
+
+                <!-- single post -->
+                <div class="all atletismo">
+                    <div class="post-img">
+                        <img src="images/atletismo2.jpg" alt="post">
+                        <span class="category-name">Atletismo</span>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-content-top">
+                            <span>Correr te da la libertad de ser tú mismo</span>
+                        </div>
+                        <h2>Ongombo Recio</h2>
+                        <p>Da clases de Lunes a Miércoles de 7 a 9 PM. Precio: 700 €</p>
+                        <a href="http://localhost:63342/webPolideportivo/MetodosDePago/metodosPago.html" type="button"
+                           class="read-btn" data-profesor="Ongombo Recio" data-deporte="Atletismo"
+                           data-precio="700€">Reservar</a>
+                    </div>
+                </div>
+                <!-- end of single post -->
+
+                <!-- single post -->
+                <div class="all atletismo">
+                    <div class="post-img">
+                        <img src="images/atletismo3.jpg" alt="post">
+                        <span class="category-name">Atletismo</span>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-content-top">
+                            <span>El dolor es inevitable, pero el sufrimiento es opcional</span>
+                        </div>
+                        <h2>Andrea Salvador</h2>
+                        <p>Da clases de Martes a Jueves de 6 a 8 PM. Precio: 700 €</p>
+                        <a href="http://localhost:63342/webPolideportivo/MetodosDePago/metodosPago.html"
+                           type="button" class="read-btn" data-profesor="Andrea Salvador" data-deporte="Atletismo"
+                           data-precio="700€">Reservar</a>
+                    </div>
+                </div>
+                <!-- end of single post -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Pie de página -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <h4>Inicio</h4>
+                <ul>
+                    <li><a href="http://localhost:63342/webPolideportivo/Home/home.html#bienvenida">Bienvenida</a></li>
+                    <li><a href="http://localhost:63342/webPolideportivo/Home/home.html#queOfrecemos">¿Qué ofrecemos?</a></li>
+                    <li><a href="http://localhost:63342/webPolideportivo/Home/home.html#porqueVenir">Por qué venir aquí</a></li>
+                    <li><a href="http://localhost:63342/webPolideportivo/Home/home.html#galeria">Galería</a></li>
+                    <li><a href="http://localhost:63342/webPolideportivo/Home/home.html#contacto">Contacto</a></li>
+                    <li><a href="http://localhost:63342/webPolideportivo/Home/home.html#valoraciones">Valoraciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Instalaciones</h4>
+                <ul>
+                    <li><a href="http://localhost:63342/webPolideportivo/Instalaciones/instalaciones.html#futbol">Fútbol</a></li>
+                    <li><a href="http://localhost:63342/webPolideportivo/Instalaciones/instalaciones.html#baloncesto">Baloncesto</a></li>
+                    <li><a href="http://localhost:63342/webPolideportivo/Instalaciones/instalaciones.html#natacion">Natación</a></li>
+                    <li><a href="http://localhost:63342/webPolideportivo/Instalaciones/instalaciones.html#padel">Pádel</a></li>
+                    <li><a href="http://localhost:63342/webPolideportivo/Instalaciones/instalaciones.html#atletismo">Atletismo</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Servicios</h4>
+                <ul>
+                    <li><a href="http://localhost:63342/webPolideportivo/PrevisionTemporal/previsionTemporal.html">Previsión Temporal</a></li>
+                    <li><a href="#">Reservas</a></li>
+                    <li><a href="http://localhost:63342/webPolideportivo/CampamentoVerano/campamentoVerano.html">Campamentos de verano</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Redes sociales</h4>
+                <div class="socials">
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                    <a href="#"><i class='bx bxl-facebook-square' ></i></a>
+                    <a href="#"><i class='bx bxl-tiktok'></i></a>
+                    <a href="#"><i class='bx bxl-twitter' ></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!---- Botón de scroll para ir hasta arriba de la página --->
+<a href="#" class="top"><i class='bx bx-up-arrow-alt' ></i></a>
+<script src="https://unpkg.com/scrollreveal"></script>
+
+<!-- Efectos del formulario -->
+<div class="blur-bg-overlay"></div>
+<div class="form-popup">
+    <span class="close-btn material-symbols-rounded">close</span>
+    <!-- Formulario Iniciar Sesión -->
+    <div class="form-box login">
+        <div class="form-details">
+            <h2>Bienvenido de nuevo</h2>
+            <p>Inicie sesión con su información personal para mantenerse conectado con nosotros</p>
+        </div>
+        <div class="form-content">
+            <h2>Inicio de sesión</h2>
+            <form action="http://localhost/PHP/login.php" method="POST" autocomplete="off">
+                <div class="input-field">
+                    <input type="text" name="correo" id="correo" maxlength="30" required>
+                    <label>Correo</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" name="contrasenia" id="contrasenia" maxlength="8" required>
+                    <label>Contraseña</label>
+                </div>
+                <div class="g-recaptcha" data-sitekey="6LeNldopAAAAAMa5ul8U8DoEG6Nj6sadbEAq5TtA"></div>
+                <button type="submit" name="submit" class="submit">Acceder</button>
+            </form>
+            <div class="bottom-link">
+                ¿No tienes cuenta?
+                <a href="#" id="signup-link">Registrarse</a>
+            </div>
+        </div>
+    </div>
+    <!-- Formulario Registrarse -->
+    <div class="form-box signup">
+        <div class="form-details">
+            <h2>Registrar una cuenta</h2>
+            <p>Para formar parte de nuestra comunidad, regístrese utilizando su información personal.</p>
+        </div>
+        <div class="form-content">
+            <h2>Registro</h2>
+            <form action="http://localhost/PHP/registro.php" method="POST">
+                <div class="input-field">
+                    <input type="text" name="nombre" oninput="validarNombre(event)" autocomplete="off" required>
+                    <label>Introduce tu nombre</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" name="apellidos" required oninput="validarNombre(event)" autocomplete="off">
+                    <label>Introduce tus apellidos</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" name="telefono" required oninput="validarTelefono(event)" maxlength="9"
+                           autocomplete="off">
+                    <label>Introduce tu teléfono</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" name="correo" required maxlength="30" autocomplete="off">
+                    <label>Introduce tu correo</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" name="contrasenia" required maxlength="8" autocomplete="off">
+                    <label>Introduce tu contraseña</label>
+                </div>
+                <button type="submit" value="submit" class="submit">Registrarse</button>
+            </form>
+            <div class="bottom-link">
+                ¿Ya tienes una cuenta?
+                <a href="#" id="login-link">Iniciar Sesión</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

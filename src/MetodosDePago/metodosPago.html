@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Font Awesome CDN-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <title>Métodos de Pago</title>
+        <link rel="stylesheet" href="metodosPago.css">
+        <!-- 'defer' le dice al navegador que espere hasta que la página haya terminado de analizarse,
+         antes de ejecutar el script -->
+        <script src="metodosPago.js" defer></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="title">
+                <h4>Selecciona un<span style="color: #6064b6"> método de pago</span></h4>
+            </div>
+
+            <form action="#">
+                <input type="radio" name="payment" id="tarjetaCredito">
+                <input type="radio" name="payment" id="bizum">
+
+                <div class="category">
+                    <label for="tarjetaCredito" class="tarjetaCreditoMethod">
+                        <div class="imgName">
+                            <div class="imgContainer tarjetaCredito">
+                                <img src="images/TarjetaDeCredito.jpg" alt="">
+                            </div>
+                            <span class="name">Tarjeta de Crédito</span>
+                        </div>
+                        <span class="check"><i class="fa-solid fa-circle-check" style="color: #6064b6;"></i></span>
+                    </label>
+                    <label for="bizum" class="bizumMethod">
+                        <div class="imgName">
+                            <div class="imgContainer bizum">
+                                <img src="images/Bizum.jpg" alt="">
+                            </div>
+                            <span class="name">Bizum</span>
+                        </div>
+                        <span class="check"><i class="fa-solid fa-circle-check" style="color: #6064b6;"></i></span>
+                    </label>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

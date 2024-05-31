@@ -3,57 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website with Login & Signup Form</title>
+    <title>Polideportivo Lozano Villanova</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
+    <link rel="stylesheet" href="estilosHome.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src="script.js" defer></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- 'defer' le dice al navegador que espere hasta que la página haya terminado de analizarse,
+     antes de ejecutar el script -->
+    <script src="home.js" defer></script>
 </head>
 <body>
     <header>
-        <!-- Navigation bar -->
-        <nav class="navbar">
+        <!-- Cabecera -->
+        <nav class="cabecera">
             <span class="menu-btn material-symbols-rounded">menu</span>
             <a href="#" class="logo">
                 <img src="images/logo.png" alt="logo">
-                <h2>Polideportivo Lozano Villanova</h2>
             </a>
             <ul class="links">
                 <span class="close-btn material-symbols-rounded">close</span>
                 <li><a href="#">Inicio</a></li>
-                <li><a href="#">Instalaciones</a></li>
-                <li><a href="#">Reservar pista</a></li>
-                <li><a href="#">Clases particulares</a></li>
+                <li><a href="http://localhost:63342/webPolideportivo/Instalaciones/instalaciones.html">Instalaciones</a></li>
+                <li><a href="http://localhost:63342/webPolideportivo/PrevisionTemporal/previsionTemporal.html">Previsión Temporal</a></li>
+                <li><a href="http://localhost:63342/webPolideportivo/Reservas/reservas.html">Reservas</a></li>
+                <li><a href="http://localhost:63342/webPolideportivo/CampamentoVerano/campamentoVerano.html">Campamentos de verano</a></li>
             </ul>
-            <button class="login-btn">Inicio Sesión</button>
+            <button class="login-btn">Iniciar Sesión</button>
         </nav>
     </header>
+
+    <section class="home" id="home">
+        <div class="home-text">
+            <h1><span class="txtAzulClaro">Polideportivo</span><br>Lozano Villanova</h1>
+        </div>
+    </section>
+
+    <!-- SECCIÓN BIENVENIDA -->
+    <section class="bienvenida" id="bienvenida">
+        <div class="contenido-seccion">
+            <div class="fila">
+                <div class="col">
+                    <div class="contenedor-titulo">
+                        <div class="numero">01</div>
+                        <div class="info">
+                            <h2>Bienvenida</h2>
+                        </div>
+                    </div>
+                    <p>Querido deportista , si eres un apasionado del deporte este es tu sitio , en nuestro
+                       polideportivo contamos con las mejores instalaciones y actividades para que lo único que
+                       te apetezca hacer es estar en este magnífico centro.</p>
+                </div>
+                <div class="col">
+                    <img src="images/bienvenida.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN QUÉ OFRECEMOS -->
+    <section id="queOfrecemos" class="queOfrecemos">
+        <div class="fila">
+            <div class="col">
+                <img src="images/ofrecer.jpg" alt="">
+            </div>
+            <div class="col">
+                <div class="contenedor-titulo">
+                    <div class="numero">02</div>
+                    <div class="info">
+                        <h2>Lo que ofrecemos</h2>
+                    </div>
+                </div>
+                <p class="p-especial">Nuestro polideportivo cuenta con :</p>
+                <ul>
+                    <li><span>Instalaciones: </span> El polideportivo Lozano Villanova cuenta con pistas de futbol,
+                        piscina con spa, baloncesto, atletismo, pádel, etc...</li>
+
+                    <li><span>Previsión Temporal: </span> Revisa el tiempo en los próximos 5 días.</li>
+
+                    <li><span>Reservas: </span> Contamos por una parte con reservas de pistas por horas de cualquier
+                        deporte a un precio de 20 euros la hora y por otro lado las reservas de clases particulares
+                        con los mejores profesionales.</li>
+
+                    <li><span>Campamento de verano: </span> Tus hijos podrán disfrutar del mejor verano de su vida con
+                        las actividades más emocionantes y rodeado de amistades.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCION POR QUÉ VENIR AQUÍ -->
+    <section class="porqueVenir" id="porqueVenir">
+        <div class="contenido-seccion">
+            <div class="fila">
+                <div class="col">
+                    <div class="contenedor-titulo">
+                        <div class="numero">03</div>
+                        <div class="info">
+                            <h2>¿ Por qué venir aquí ?</h2>
+                        </div>
+                    </div>
+                    <p>Nuestro polideportivo cuenta con una de las mejores instalaciones de la comunidad de Madrid.
+                       Contamos con los mejores profesionales para la condición física. Además está situado en una
+                       zona tranquila, lejos del centro.</p>
+                </div>
+                <div class="col">
+                    <img src="images/pregunta.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA DE IMÁGENES -->
+    <div class="galeria" id="galeria">
+        <h2>GALERIA DE IMÁGENES</h2>
+        <div class="slider-wrapper">
+            <button id="prev-slide" class="slide-button  material-symbols-rounded">chevron_left</button>
+            <div class="image-list">
+                <img src="images/img-1.jpg" alt="img-1" class="image-item">
+                <img src="images/img-2.jpg" alt="img-2" class="image-item">
+                <img src="images/img-3.jpg" alt="img-3" class="image-item">
+                <img src="images/img-4.jpg" alt="img-4" class="image-item">
+                <img src="images/img-5.jpg" alt="img-5" class="image-item">
+                <img src="images/img-6.jpg" alt="img-6" class="image-item">
+                <img src="images/img-7.jpg" alt="img-7" class="image-item">
+                <img src="images/img-8.jpg" alt="img-8" class="image-item">
+                <img src="images/img-9.jpg" alt="img-9" class="image-item">
+                <img src="images/img-10.jpg" alt="img-10" class="image-item">
+            </div>
+            <button id="next-slide" class="slide-button  material-symbols-rounded">chevron_right</button>
+        </div>
+        <div class="slider-scrollbar">
+            <div class="scrollbar-track">
+                <div class="scrollbar-thumb"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN CONTACTO -->
+    <section class="contacto" id="contacto">
+        <h2>CONTACTO</h2>
+        <div class="section__container contacto__container">
+            <div class="contacto__content">
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3032.211603708741!2d-3.622162124466049!3d40.5369139483166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422daadeeaaaab%3A0x62360f3001e51015!2sPolideportivo%20Municipal%20de%20Alcobendas%20Jos%C3%A9%20Caballero!5e0!3m2!1ses!2ses!4v1710269996444!5m2!1ses!2ses"
+                            width="800" height="600" style="border:0;" allowfullscreen=""
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div>
+                    <ul class="contacto__links">
+                        <li>
+                            <span><i class='bx bxs-phone'></i></span>
+                            +34 862451173
+                        </li>
+                        <li>
+                            <span><i class='bx bxs-calendar'></i></span>
+                            8:00 AM - 23:00 PM
+                        </li>
+                        <li>
+                            <span><i class='bx bxs-map'></i></span>
+                            Alcobendas, Madrid, 28100
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="contacto__bar">
+            Copyright © 2024 Polideportivo Lozano Villanova. Todos los derechos reservados.
+        </div>
+    </section>
+
+    <!-- Formulario de Valoraciones -->
+    <div class="valoraciones" id="valoraciones">
+        <h2>DANOS TU VALORACIÓN</h2>
+        <form action="https://formsubmit.co/fwrlozano@gmail.com" method="Post">
+            <div class="rating">
+                <input type="number" hidden>
+                <i class='bx bx-star star' style="--i: 0;"></i>
+                <i class='bx bx-star star' style="--i: 1;"></i>
+                <i class='bx bx-star star' style="--i: 2;"></i>
+                <i class='bx bx-star star' style="--i: 3;"></i>
+                <i class='bx bx-star star' style="--i: 4;"></i>
+            </div>
+            <textarea name="Nombre" placeholder="Introduzca su nombre" oninput="validarNombre(event)"></textarea>
+            <textarea name="Opinión" id="" cols="30" rows="5" maxlength="600"
+                      placeholder="Introduce aquí tu opinión..."></textarea>
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="http://localhost:63342/webPolideportivo/Home/home.html">
+            <div class="btn-group">
+                <button type="submit" class="btn submit">Enviar</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Pie de página -->
     <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="footer-col">
                     <h4>Inicio</h4>
                     <ul>
-                        <li><a href="#">Bienvenida</a></li>
-                        <li><a href="#">¿Qué ofrecemos?</a></li>
-                        <li><a href="#">Valoraciones</a></li>
+                        <li><a href="#bienvenida">Bienvenida</a></li>
+                        <li><a href="#queOfrecemos">¿Qué ofrecemos?</a></li>
+                        <li><a href="#porqueVenir">Por qué venir aquí</a></li>
+                        <li><a href="#galeria">Galería</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                        <li><a href="#valoraciones">Valoraciones</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Instalaciones</h4>
                     <ul>
-                        <li><a href="#">Fútbol</a></li>
-                        <li><a href="#">Baloncesto</a></li>
-                        <li><a href="#">Natación</a></li>
-                        <li><a href="#">Pádel</a></li>
-                        <li><a href="#">Atletismo</a></li>
+                        <li><a href="http://localhost:63342/webPolideportivo/Instalaciones/instalaciones.html#futbol">Fútbol</a></li>
+                        <li><a href="http://localhost:63342/webPolideportivo/Instalaciones/instalaciones.html#baloncesto">Baloncesto</a></li>
+                        <li><a href="http://localhost:63342/webPolideportivo/Instalaciones/instalaciones.html#natacion">Natación</a></li>
+                        <li><a href="http://localhost:63342/webPolideportivo/Instalaciones/instalaciones.html#padel">Pádel</a></li>
+                        <li><a href="http://localhost:63342/webPolideportivo/Instalaciones/instalaciones.html#atletismo">Atletismo</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Servicios</h4>
                     <ul>
-                        <li><a href="#">Reservas</a></li>
-                        <li><a href="#">Clases particulares</a></li>
+                        <li><a href="http://localhost:63342/webPolideportivo/PrevisionTemporal/previsionTemporal.html">Previsión Temporal</a></li>
+                        <li><a href="http://localhost:63342/webPolideportivo/Reservas/reservas.html">Reservas</a></li>
+                        <li><a href="http://localhost:63342/webPolideportivo/CampamentoVerano/campamentoVerano.html">Campamentos de verano</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -68,62 +243,89 @@
             </div>
         </div>
     </footer>
-    <!-- PopUp Form -->
-    <div class="blur-bg-overlay"></div>
-    <div class="form-popup">
-        <span class="close-btn material-symbols-rounded">close</span>
-        <div class="form-box login">
-            <div class="form-details">
-                <h2>Welcome Back</h2>
-                <p>Please log in using your personal information to stay connected with us</p>
-            </div>
-            <div class="form-content">
-                <h2>LOGIN</h2>
-                <form action="#">
-                    <div class="input-field">
-                        <input type="text" required>
-                        <label>Email</label>
-                    </div>
-                    <div class="input-field">
-                        <input type="password" required>
-                        <label>Password</label>
-                    </div>
-                    <a href="#" class="forgot-pass">Forgot Password?</a>
-                    <button type="submit">Log In</button>
-                </form>
-                <div class="bottom-link">
-                    Don't have an account
-                    <a href="#" id="signup-link">Sign Up</a>
+
+    <!-- Cookies -->
+    <div class="cookies">
+        <div class="container">
+            <div class="subcontainer">
+                <div class="cookies">
+                    <p>Este sitio web utiliza cookies para garantizar que obtenga la mejor experiencia en nuestro sitio web.<a
+                        href="#"> Más información</a></p>
+                        <button class="cookies-btn">Estoy de acuerdo</button>
                 </div>
             </div>
         </div>
-        <div class="form-box signup">
+    </div>
+
+    <!---- Botón de scroll para ir hasta arriba de la página --->
+    <a href="#" class="top"><i class='bx bx-up-arrow-alt' ></i></a>
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- Efectos del formulario -->
+    <div class="blur-bg-overlay"></div>
+    <div class="form-popup">
+        <span class="close-btn material-symbols-rounded">close</span>
+        <!-- Formulario Iniciar Sesión -->
+        <div class="form-box login">
             <div class="form-details">
-                <h2>Create Account</h2>
-                <p>To become a part of our community, please sign up using your personal information.</p>
+                <h2>Bienvenido de nuevo</h2>
+                <p>Inicie sesión con su información personal para mantenerse conectado con nosotros</p>
             </div>
             <div class="form-content">
-                <h2>SIGN UP</h2>
-                <form action="#">
+                <h2>Inicio de sesión</h2>
+                <form action="http://localhost/PHP/login.php" method="POST" autocomplete="off">
                     <div class="input-field">
-                        <input type="text" required>
-                        <label>Enter your email</label>
+                        <input type="text" name="correo" id="correo" maxlength="30" required>
+                        <label>Correo</label>
                     </div>
                     <div class="input-field">
-                        <input type="password" required>
-                        <label>Create password</label>
+                        <input type="password" name="contrasenia" id="contrasenia" maxlength="8" required>
+                        <label>Contraseña</label>
                     </div>
-                    <div class="policy-text">
-                        <input type="checkbox" id="policy">
-                        <label for="policy">
-                            I agree the <a href="#">Terms & Conditions</a>
-                        </label>
-                    </div>
-                    <button type="submit">Sign Up</button>
+                    <div class="g-recaptcha" data-sitekey="6LeNldopAAAAAMa5ul8U8DoEG6Nj6sadbEAq5TtA"></div>
+                    <button type="submit" name="submit" class="submit">Acceder</button>
                 </form>
                 <div class="bottom-link">
-                    Already have an account?
-                    <a href="#" id="login-link">Login</a>
+                    ¿No tienes cuenta?
+                    <a href="#" id="signup-link">Registrarse</a>
+                </div>
+            </div>
+        </div>
+        <!-- Formulario Registrarse -->
+        <div class="form-box signup">
+            <div class="form-details">
+                <h2>Registrar una cuenta</h2>
+                <p>Para formar parte de nuestra comunidad, regístrese utilizando su información personal.</p>
+            </div>
+            <div class="form-content">
+                <h2>Registro</h2>
+                <form action="http://localhost/PHP/registro.php" method="POST">
+                <div class="input-field">
+                        <input type="text" name="nombre" oninput="validarNombre(event)" autocomplete="off" required>
+                        <label>Introduce tu nombre</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" name="apellidos" required oninput="validarNombre(event)" autocomplete="off">
+                        <label>Introduce tus apellidos</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" name="telefono" required oninput="validarTelefono(event)" maxlength="9"
+                               autocomplete="off">
+                        <label>Introduce tu teléfono</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" name="correo" required maxlength="30" autocomplete="off">
+                        <label>Introduce tu correo</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" name="contrasenia" required maxlength="8" autocomplete="off">
+                        <label>Introduce tu contraseña</label>
+                    </div>
+                    <button type="submit" value="submit" class="submit">Registrarse</button>
+                </form>
+                <div class="bottom-link">
+                    ¿Ya tienes una cuenta?
+                    <a href="#" id="login-link">Iniciar Sesión</a>
                 </div>
             </div>
         </div>

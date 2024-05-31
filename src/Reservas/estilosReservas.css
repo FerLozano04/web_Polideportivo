@@ -296,9 +296,15 @@ form button:hover{
     margin-right: 7px;
 }
 
+header.sticky{
+    background: var(--bg-color);
+    padding: 14px 14%;
+    box-shadow: 0px 0px 10px rgb(0 0 0 / 10%);
+}
+
 /* Responsive */
 
-@media (max-width: 1024px){
+@media (max-width: 1023px){
 
     .cabecera :is(.menu-btn, .links .close-btn){
         display: block;
@@ -356,281 +362,391 @@ form button:hover{
     }
 }
 
-header.sticky{
-    background: var(--bg-color);
-    padding: 14px 14%;
-    box-shadow: 0px 0px 10px rgb(0 0 0 / 10%);
-}
+/* MIS RESERVAS */
 
-/* SECCIÓN FÚTBOL */
-
-.futbol_container{
-    overflow: hidden;
-    position: relative;
-    display: grid;
-    gap: 2rem;
-    align-items: center;
+.cards{
+    font-family: 'Poppins', sans serif;
+    line-height: 1.5;
     width: 100%;
-    margin: auto;
-    background: url("images/futbol.jpg");
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    padding: 90px 510px;
+    margin: 0 auto;
+    padding: 40px 0;
+    background: #eee;
 }
 
-.futbol_content h2{
-    font-size: 3rem;
+.cards > h2{
     text-align: center;
-    color: red;
+    padding: 10px 0;
+    font-size: 32px;
 }
 
-.futbol_content p{
-    margin-bottom: 100px;
-    margin-top: 30px;
-    font-size: 33px;
-    color: #fff;
+.cards > p{
+    font-weight: 300;
+    padding: 10px 0;
+    opacity: 0.7;
+    text-align: center;
 }
 
-.futbol_btn button{
+.cards > input{
+    text-align: center;
+    padding: 10px 50px;
+    font-size: 15px;
+    margin-left: 610px;
+    position: sticky;
+}
+
+.cards .cards-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 40px;
+}
+
+.card {
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 20px;
+    background: #fff;
+  }
+
+  .card-content {
+    padding: 20px;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .card-description {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .pay-button {
+      display: block;
+      padding: 10px 129px;
+      background-color: #0056b3;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 5px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 15px;
+      cursor: pointer;
+      border: 1px solid #292929;
+      margin-bottom: 30px;
+  }
+
+  .pay-button:hover {
+      background-color: #000;
+  }
+
+  .card-button {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    border: 1px solid #292929;
+    background: #0056b3;
+    margin-bottom: 30px;
+  }
+
+  .card-button:hover {
     background-color: #000;
-    border: none;
-    color: #fff;
-    padding: 15px 35px;
-    font-size: 17px;
-    letter-spacing: 3px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    grid-gap: 0.5rem;
-    align-items: center;
+  }
+
+  .delete-button {
     display: block;
-    width: fit-content;
-    margin: auto;
-    margin-top: 30px;
-}
-
-.futbol_content .futbol_btn a{
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 500;
-}
-
-/* SECCIÓN BALONCESTO */
-
-.baloncesto_container{
-    overflow: hidden;
-    position: relative;
-    display: grid;
-    gap: 2rem;
-    align-items: center;
-    width: 100%;
-    margin: auto;
-    background: url("images/baloncesto.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding: 90px 510px;
-}
-
-.baloncesto_content h2{
-    font-size: 3rem;
-    text-align: center;
-}
-
-.baloncesto_content p{
-    margin-bottom: 100px;
-    margin-top: 30px;
-    font-size: 33px;
-    color: #fff;
-}
-
-.baloncesto_btn button{
-    background-color: #fff;
-    border: none;
-    color: #fff;
-    padding: 15px 35px;
-    font-size: 17px;
-    letter-spacing: 3px;
-    font-weight: bold;
-    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
     cursor: pointer;
-    grid-gap: 0.5rem;
-    align-items: center;
-    display: block;
-    width: fit-content;
-    margin: auto;
-    margin-top: 30px;
-}
+    border: 1px solid #292929;
+    background: #0056b3;
+    margin-bottom: 30px;
+  }
 
-.baloncesto_content .baloncesto_btn a{
-    color: #000;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 500;
-}
-
-/* SECCIÓN NATACIÓN */
-
-.natacion_container{
-    overflow: hidden;
-    position: relative;
-    display: grid;
-    gap: 2rem;
-    align-items: center;
-    width: 100%;
-    margin: auto;
-    background: url("images/natacion.jpg");
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    padding: 90px 510px;
-}
-
-.natacion_content h2{
-    font-size: 3rem;
-    text-align: center;
-    color: #000;
-}
-
-.natacion_content p{
-    margin-bottom: 100px;
-    margin-top: 30px;
-    font-size: 33px;
-    color: #fff;
-}
-
-.natacion_btn button{
+  .delete-button:hover {
     background-color: #000;
-    border: none;
-    color: #fff;
-    padding: 15px 35px;
-    font-size: 17px;
-    letter-spacing: 3px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    grid-gap: 0.5rem;
-    align-items: center;
+  }
+
+  .delete-button2 {
     display: block;
-    width: fit-content;
-    margin: auto;
-    margin-top: 30px;
-}
-
-.natacion_content .natacion_btn a{
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 500;
-}
-
-/* SECCIÓN PÁDEL */
-
-.padel_container{
-    overflow: hidden;
-    position: relative;
-    display: grid;
-    gap: 2rem;
-    align-items: center;
-    width: 100%;
-    margin: auto;
-    background: url("images/padel.jpg");
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    padding: 90px 510px;
-}
-
-.padel_content h2{
-    font-size: 3rem;
-    text-align: center;
-}
-
-.padel_content p{
-    margin-bottom: 100px;
-    margin-top: 30px;
-    font-size: 33px;
-    color: #fff;
-}
-
-.padel_btn button{
-    background-color: #fff;
-    border: none;
-    color: #fff;
-    padding: 15px 35px;
-    font-size: 17px;
-    letter-spacing: 3px;
-    font-weight: bold;
-    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
     cursor: pointer;
-    grid-gap: 0.5rem;
-    align-items: center;
-    display: block;
-    width: fit-content;
-    margin: auto;
-    margin-top: 30px;
-}
+    border: 1px solid #292929;
+    background: #0056b3;
+    margin-bottom: 30px;
+  }
 
-.padel_content .padel_btn a{
-    color: #000;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 500;
-}
-
-/* SECCIÓN ATLETISMO */
-
-.atletismo_container{
-    overflow: hidden;
-    position: relative;
-    display: grid;
-    gap: 2rem;
-    align-items: center;
-    width: 100%;
-    margin: auto;
-    background: url("images/atletismo.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding: 90px 510px;
-}
-
-.atletismo_content h2{
-    font-size: 3rem;
-    text-align: center;
-}
-
-.atletismo_content p{
-    margin-bottom: 100px;
-    margin-left: 23px;
-    margin-top: 30px;
-    font-size: 33px;
-    color: #000;
-}
-
-.atletismo_btn button{
+  .delete-button2:hover {
     background-color: #000;
-    border: none;
-    color: #fff;
-    padding: 15px 35px;
-    font-size: 17px;
-    letter-spacing: 3px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    grid-gap: 0.5rem;
-    align-items: center;
+  }
+
+  .delete-button3 {
     display: block;
-    width: fit-content;
-    margin: auto;
-    margin-top: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    border: 1px solid #292929;
+    background: #0056b3;
+    margin-bottom: 30px;
+  }
+
+  .delete-button3:hover {
+    background-color: #000;
+  }
+
+  .delete-button4 {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    border: 1px solid #292929;
+    background: #0056b3;
+    margin-bottom: 30px;
+  }
+
+  .delete-button4:hover {
+    background-color: #000;
+  }
+
+  .delete-button5 {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    border: 1px solid #292929;
+    background: #0056b3;
+    margin-bottom: 30px;
+  }
+
+  .delete-button5:hover {
+    background-color: #000;
+  }
+
+  .edit-form-container .edit-form h4{
+    font-size: 1rem;
+    margin-bottom: 10px;
+    margin-left: 15px;
+  }
+
+  .edit-form-container .edit-form input{
+    text-align: center;
+    padding: 10px 50px;
+    margin-left: 10px;
+    font-size: 15px;
+  }
+
+  @media(max-width: 1170px){
+    .cards .cards-container{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .cards > input{
+        text-align: center;
+        padding: 10px 50px;
+        font-size: 15px;
+        margin-left: 250px;
+        position: sticky;
+    }
+  }
+
+  @media(max-width: 768px){
+    .cards .cards-container{
+        grid-template-columns: 1fr;
+    }
+
+    .cards > input{
+        text-align: center;
+        padding: 10px 50px;
+        font-size: 15px;
+        margin-left: 100px;
+        position: sticky;
+    }
+  }
+
+  @media(max-width: 425px){
+      .cards .cards-container{
+          grid-template-columns: 1fr;
+      }
+
+      .cards > input{
+          text-align: center;
+          padding: 10px 40px;
+          font-size: 15px;
+          margin-left: 40px;
+          position: sticky;
+      }
+  }
+
+/* CLASES PARTICULARES */
+
+.main-container{
+    font-family: 'Poppins', sans serif;
+    line-height: 1.5;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 0;
+    background: #fff;
 }
 
-.atletismo_content .atletismo_btn a{
+.main-container img{
+    width: 100%;
+}
+
+.main-container > h2{
+    text-align: center;
+    padding: 10px 0;
+    font-size: 32px;
+}
+
+.main-container > p{
+    font-weight: 300;
+    padding: 10px 0;
+    opacity: 0.7;
+    text-align: center;
+}
+
+.category-head{
+    margin: 30px 0;
+}
+
+.category-head ul{
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.category-title{
+    flex: 0 0 calc(16.6667% - 10px);
+    display: flex;
+    justify-content: center;
+    background: #a8a8a8;
+    padding: 12px;
     color: #fff;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 500;
+    margin: 5px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.category-title:hover{
+    opacity: 0.7;
+}
+
+.category-title li{
+    padding: 0 10px;
+}
+
+/* single post */
+
+.posts-main-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 40px;
+}
+
+.posts-main-container > div{
+    box-shadow: 0px 8px 22px -12px rgba(0, 0, 0, 0.64);
+}
+
+.post-img{
+    position: relative;
+}
+
+.category-name{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 2px;
+}
+
+.futbol .category-name{
+    background: #2c2a4a;
+}
+
+.baloncesto .category-name{
+    background: #f0544f;
+}
+
+.natacion .category-name{
+    background: #00a7ea;
+}
+
+.padel .category-name{
+    background: #a1e44d;
+}
+
+.atletismo .category-name{
+    background: #f03250;
+}
+
+.post-content{
+    padding: 25px;
+}
+
+.post-content-top{
+    background: #80ced7;
+    color: #fff;
+    opacity: 0.8;
+    padding: 5px 0 5px 15px;
+}
+
+.post-content-top span{
+    padding-right: 20px;
+}
+
+.post-content h2{
+    font-size: 22px;
+    padding: 12px 0;
+    font-weight: 400;
+}
+
+.post-content p{
+    opacity: 0.7;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.read-btn{
+    color: #000;
+    border: none;
+    padding: 8px 15px;
+    display: table;
+    margin: 15px auto;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    border: 1px solid #292929;
+    background: transparent;
+    margin-bottom: 40px;
+}
+
+.read-btn:hover{
+    background: #f6f6f6;
+}
+
+.active{
+    background: #f0544f;
+}
+
+@media(max-width: 1170px){
+    .posts-main-container{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media(max-width: 768px){
+    .posts-main-container{
+        grid-template-columns: 1fr;
+    }
 }
 
 /* BOTÓN SCROLL HACIA ARRIBA */
@@ -735,108 +851,4 @@ footer{
     .footer-col{
         width: 48%;
     }
-}
-
-@media (max-width: 1250px) {
-    .futbol_container,
-    .baloncesto_container,
-    .natacion_container,
-    .padel_container,
-    .atletismo_container {
-        padding: 90px 250px;
-    }
-
-    .futbol_btn button,
-    .baloncesto_btn button,
-    .natacion_btn button,
-    .padel_btn button,
-    .atletismo_btn button {
-        padding: 15px 20px;
-    }
-}
-
-@media (max-width: 1024px) {
-    .futbol_container,
-    .baloncesto_container,
-    .natacion_container,
-    .padel_container,
-    .atletismo_container {
-        padding: 90px 200px;
-    }
-
-    .futbol_btn button,
-    .baloncesto_btn button,
-    .natacion_btn button,
-    .padel_btn button,
-    .atletismo_btn button {
-        padding: 15px 15px;
-    }
-
-}
-
-@media (max-width: 768px) {
-    .futbol_container,
-    .baloncesto_container,
-    .natacion_container,
-    .padel_container,
-    .atletismo_container {
-        padding: 90px 150px;
-    }
-
-    .futbol_btn button,
-    .baloncesto_btn button,
-    .natacion_btn button,
-    .padel_btn button,
-    .atletismo_btn button {
-        padding: 15px 10px;
-    }
-
-
-}
-
-@media (max-width: 600px) {
-    .futbol_container,
-    .baloncesto_container,
-    .natacion_container,
-    .padel_container,
-    .atletismo_container {
-        padding: 90px 100px;
-    }
-
-    .futbol_btn button,
-    .baloncesto_btn button,
-    .natacion_btn button,
-    .padel_btn button,
-    .atletismo_btn button {
-        padding: 15px 8px;
-    }
-
-    footer .footer-col {
-        width: auto;
-        padding: 0 25px;
-    }
-}
-
-@media (max-width: 400px) {
-    .futbol_container,
-    .baloncesto_container,
-    .natacion_container,
-    .padel_container,
-    .atletismo_container {
-        padding: 90px 0px;
-    }
-
-    .futbol_btn button,
-    .baloncesto_btn button,
-    .natacion_btn button,
-    .padel_btn button,
-    .atletismo_btn button {
-        padding: 15px 5px;
-    }
-
-    footer .footer-col {
-        width: auto;
-        padding: 0 25px;
-    }
-
 }
